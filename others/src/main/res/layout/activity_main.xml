@@ -1,0 +1,957 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/sharedFlow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="sharedFlow"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/flowBackPressure"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="flow back pressure"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_vp3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="view pager 2 with fragment"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_vp2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="view pager 2 + TabLayout"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_fragment_communicate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="fragment communicate"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_flow_lifecycle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="flow lifecycle"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_constraintLayout_flow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="constraintLayout flow"
+            android:textAllCaps="false" />
+
+
+
+        <Button
+            android:id="@+id/bottom_navigation_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="bottom navigation view"
+            android:textAllCaps="false" />
+
+
+        <Button
+            android:id="@+id/coroutineException"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="exception in coroutine"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnTriangle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="triangle"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_collapsing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="collapsingToolBar"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_kotlin_flow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="coroutine flow"
+            android:textAllCaps="false" />
+
+
+        <Button
+            android:id="@+id/btnStickyFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sticky live data"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnChannelActivity2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="kotlin channel"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnStateFlow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="state flow"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/recyclerview_item_anim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="recyclerview item anim"
+            android:textAllCaps="false" />
+
+
+        <Button
+            android:id="@+id/btn_overlap_anim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="overlap anim"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="solution"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnConcurrentInit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="concurrent init"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_glide_performance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="glide performance"
+            android:textAllCaps="false" />
+
+
+        <Button
+            android:id="@+id/btn_glide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="glide"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/coroutineJob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="coroutine job"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/continuation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="coroutine resume"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnStructConcurrency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="structure concurrency"
+            android:textAllCaps="false" />
+
+
+        <Button
+            android:id="@+id/btnExceptionCoroutine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="exception of coroutine"
+            android:textAllCaps="false" />
+
+
+        <Button
+            android:id="@+id/btnCancelCoroutine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="cancel of coroutine"
+            android:textAllCaps="false" />
+
+
+
+        <Button
+            android:id="@+id/btn_coroutine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="coroutine"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/annotation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="annotation"
+            android:textAllCaps="false" />
+
+
+        <Button
+            android:id="@+id/repository_livedata"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="repository_livedata"
+            android:textAllCaps="false" />
+
+
+
+
+        <Button
+            android:id="@+id/btnLiveData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LiveData"
+            android:textAllCaps="false" />
+
+
+        <Button
+            android:id="@+id/btn_concurrent_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="concurrent List"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_coordinate_layout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="nested CoordinateLayout"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="log"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_okio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="okio"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_zoom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="zoom"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_imageView_scaleType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="imageview scaleType"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_item_animator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="recyclerview item animator"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_overlap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="overlap layout manager"
+            android:textAllCaps="false" />
+
+
+        <Button
+            android:id="@+id/kotlinActivity2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="kotlin activity2"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/gridlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="grid layout manager"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/LaneLayoutManager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="lane layout manager"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/RxSingle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="rx single"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/dutyChain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="duty chain"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/count_down_latch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="count down latch"
+            android:textAllCaps="false" />
+
+
+        <Button
+            android:id="@+id/btn_flow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="flow"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btnCoroutine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="coroutine sampe 2"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnAudioEncoder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="audio encoder"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnAudioRecorder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AudioRecorder"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnNotificationActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="notification"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnMultiTouchDelegate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="multi touch delegate"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/goodDialogFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="good dialog frament"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/poorDialogFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="poor dialog frament"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_touch_event"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="touch event"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/oneViewGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="one view group"
+            android:textAllCaps="false" />
+
+
+
+        <Button
+            android:id="@+id/btn_coordinate_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CoordinateLayout"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_touch_delegate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="touch delegate"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnTimePicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="time picker"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btnInterView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="interview"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btnPercentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="percent layout"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btnRecyclerViewPerformance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="recyclerview performance"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btnCrop2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="crop view by function"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btnCrop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="crop view"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btnBlur2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Blur with mask"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btnBlur"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Blur"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btnOverrideProperty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Override property"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_kotlin_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="kotlin Activity"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_constraintlayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="visibility of chain"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_constraint_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="constraint add "
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btnTransition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="transitionManager "
+            android:textAllCaps="false" />
+
+
+        <Button
+            android:id="@+id/btn_constraint_set_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="constrainst set "
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_livecomment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="live comment activity"
+            android:textAllCaps="false" />
+
+
+
+        <Button
+            android:id="@+id/btnAddViewActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="add view"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btnLiveComment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="live comment"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btnPpath"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="path"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_new_activity_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="new activity result"
+            android:textAllCaps="false" />
+
+
+        <Button
+            android:id="@+id/btnTypeParameter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="type parameter"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btnRecyclerViewIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="indicator of recyclerview"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btnSelectRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="selection in recyclerview"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btnVarietyAdapter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="variety adapter"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="progress bar"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnMaskViewGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="mask viewgroup"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnDns"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="dns"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnDynamic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="dynamical build layout"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btnChannelActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="kotlin channel"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btnLifecycleActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="lifecycle observe"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnDarkActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="dark acitivty"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btnSuspendCoroutine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="suspend coroutine"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnSuspendCrossActivities"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="suspend list cross activiteis"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btnCoroutineSample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="coroutine blog sample"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnViewFlipper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ViewFlipper"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_no_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="noFieldActivity"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/presenter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="presenter"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/repository_single"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="repository_single"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/godActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="god activity"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btnRetrofit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="retrofit"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btnTransformations"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Transformations"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_data_binding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="data binding"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_factory22"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="factory22"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_factory2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="factory2"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_constraintlayou"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="dynamically add view to constraintlayou"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_operator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="kotlin operator"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_delegate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="delegate"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_broadcat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="broadcast"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SharedPreference"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_gson"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="gson"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_output_stream"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Output Stream"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_threadpool"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="thread pool"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="list operation"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_webview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="webview"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_concurrent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="concurrent"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_treasure"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="treasure box layout"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_spannable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="spannable"
+            android:textAllCaps="false" />
+
+
+        <Button
+            android:id="@+id/btn_client_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="aidl"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_ipc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ipc"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_tag_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="tag text view"
+            android:textAllCaps="false" />
+
+
+
+        <Button
+            android:id="@+id/btn_tag_view_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="tag view activity"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_tag_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="tag activity"
+            android:textAllCaps="false" />
+
+
+        <Button
+            android:id="@+id/btn_anonymous_fun"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="kotlin anonymous fun"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnInvoke"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="invoke activity"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btnKotlinCollection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="kotlin collection"
+            android:textAllCaps="false" />
+
+
+
+        <Button
+            android:id="@+id/btn_transparent_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="transparent fragment"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_vs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ViewStub"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_room"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Room"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_llive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LiveData"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_window"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="window"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_selector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Selector"
+            android:textAllCaps="false" />
+
+
+        <Button
+            android:id="@+id/btn_workmanager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="WorkManager"
+            android:textAllCaps="false" />
+
+
+        <Button
+            android:id="@+id/btn_anim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Animation"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ViewPager"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Navigation"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_drawer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DrawerLayout"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dialog"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_rx_binding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RxBinding"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_constraint_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ConstraintLayout"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="draw table by ConstrainsLayout"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_surface_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SurfaceView"
+            android:textAllCaps="false" />
+
+
+
+        <Button
+            android:id="@+id/btn_kotlin_example"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="kotlin example"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+</ScrollView>
