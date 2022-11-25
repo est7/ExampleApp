@@ -4,29 +4,27 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.View.OnClickListener
+import android.widget.Toast
+import com.application.others.databinding.ActivityMainBinding
 import com.application.others.recyclerview.SimpleRecycleViewActivity
+import com.example.base.binding
+import com.example.base.startActivity
 
-class MainActivity : AppCompatActivity(), OnClickListener {
+class MainActivity : AppCompatActivity() {
+    private val binding by binding<ActivityMainBinding>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        //initView()
+        setContentView(binding.root)
+        initView()
     }
 
-    override fun onClick(v: View?) {
-        when (v?.id) {
-            R.id.sampleRecycleview -> {
-                startActivity<SimpleRecycleViewActivity>()
-            }
 
-
-        }
-    }
-
-    inline fun <reified T> Context.startActivity(extras: Intent.() -> Unit = {}) {
-        Intent(this, T::class.java).apply(extras).also { startActivity(it) }
+    private fun initView() {
+        binding.sampleRecycleview.setOnClickListener {
+            startActivity<SimpleRecycleViewActivity>() }
     }
 
 

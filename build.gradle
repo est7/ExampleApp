@@ -3,4 +3,32 @@ plugins {
     id 'com.android.application' version '8.0.0-alpha08' apply false
     id 'com.android.library' version '8.0.0-alpha08' apply false
     id 'org.jetbrains.kotlin.android' version '1.7.20' apply false
+    id 'org.jetbrains.kotlin.jvm' version '1.7.20' apply false
+}
+
+
+
+
+
+
+
+this.beforeEvaluate {
+    println "this.beforeEvaluate"
+}
+//等同beforeEvaluate
+this.gradle.beforeProject {
+    println "this.beforeProject"
+}
+
+this.afterEvaluate {
+    println "this.afterEvaluate"
+}
+//等同配置阶段完成后
+this.gradle.afterProject {
+    println "this.afterProject"
+}
+
+
+this.gradle.taskGraph.whenReady{
+    println "whenReady"
 }

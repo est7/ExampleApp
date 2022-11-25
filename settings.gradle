@@ -17,8 +17,14 @@ dependencyResolutionManagement {
     }
 }
 
+enableFeaturePreview("VERSION_CATALOGS")
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 rootProject.name = "ExampleApp"
+
+include ':base'
+include ':build-logic'
+
 
 //include ':compose'
 //include ':customview'
