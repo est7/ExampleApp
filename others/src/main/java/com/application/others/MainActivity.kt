@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.View
 import android.view.View.OnClickListener
 import android.widget.Toast
+import com.application.others.coordinatorlayout.CoordinatorLayoutActivity
 import com.application.others.databinding.ActivityMainBinding
 import com.application.others.recyclerview.SimpleRecycleViewActivity
 import com.example.base.binding
@@ -25,7 +26,11 @@ class MainActivity : AppCompatActivity() {
     private fun initView() {
         binding.sampleRecycleview.setOnClickListener {
             startActivity<SimpleRecycleViewActivity>() }
+        binding.coordinatorLayout.setOnClickListener {
+            startActivity<CoordinatorLayoutActivity>() }
+
     }
+
 
 
     /* private fun initView() {

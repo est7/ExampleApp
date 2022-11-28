@@ -14,4 +14,10 @@
         android:name="com.application.others.recyclerview.SimpleRecycleViewActivity"
         android:label="activity_simple_recycle_view"
         tools:layout="@layout/activity_simple_recycle_view" />
+
+    <activity
+        android:id="@+id/coordinatorLayoutActivity"
+        android:name="com.application.others.coordinatorlayout.CoordinatorLayoutActivity"
+        android:label="CoordinatorLayoutActivity" />
 </navigation>
+

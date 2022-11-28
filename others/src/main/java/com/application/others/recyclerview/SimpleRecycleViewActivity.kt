@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.application.others.R
@@ -31,11 +32,18 @@ class SimpleRecycleViewActivity : AppCompatActivity() {
 
         val banklist = betterRank.ranks
 
-        val customAdapter = CustomAdapter(this,banklist)
+        val customAdapter = CustomAdapter(this, banklist)
         //设置 RecyclerView 的数据适配器。
-        binding.rvSampleRecyclerview.setAdapter(customAdapter)
+        binding.rvSampleRecyclerview.adapter = customAdapter
         //addItemDecoration
-        binding.rvSampleRecyclerview.addItemDecoration(GridDividerItemDecoration())
+//        binding.rvSampleRecyclerview.addItemDecoration(GridDividerItemDecoration())
+
+
+        //自带的分割线
+        val decoration = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
+        decoration.setDrawable(getResources().getDrawable(R.drawable.divider_gradient))
+        binding.rvSampleRecyclerview.addItemDecoration(decoration)
+
     }
 
 }
@@ -63,8 +71,7 @@ class CustomAdapter(private val context: Context, private val dataSet: List<Rank
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
         viewHolder.textView.text = dataSet[position].name
-        Glide.with(context).load(dataSet[position].avatarUrl)
-            .into(viewHolder.imageView)
+        Glide.with(context).load(dataSet[position].avatarUrl).into(viewHolder.imageView)
     }
 
     // Return the size of your dataset (invoked by the layout manager)

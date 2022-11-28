@@ -16,6 +16,13 @@
             android:textAllCaps="false" />
 
         <Button
+            android:id="@+id/coordinatorLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="coordinatorLayout"
+            android:textAllCaps="false" />
+
+        <Button
             android:id="@+id/sharedFlow"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -407,6 +414,7 @@
             android:id="@+id/btn_coordinate_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick=""
             android:text="CoordinateLayout"
             android:textAllCaps="false" />
 

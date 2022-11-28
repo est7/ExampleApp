@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/blankFragment0"
+    android:id="@+id/coordinator_nav_graph.xml">
+
+
+    <fragment
+        android:id="@+id/blankFragment0"
+        android:name="com.application.others.coordinatorlayout.CoordinatorLayoutFragment_00"
+        android:label="coordinator_layout_base"
+        tools:layout="@layout/fragment_coordinator_layout_00">
+        <action
+            android:id="@+id/action_blankFragment0_to_blankFragment1"
+            app:destination="@id/blankFragment1">
+            <argument
+                android:name="key"
+                app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/action_blankFragment0_to_blankFragment2"
+            app:destination="@id/blankFragment2" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/blankFragment1"
+        android:name="com.application.others.coordinatorlayout.CoordinatorLayoutFragment_01"
+        android:label="coordinator_appbarlayout"
+        tools:layout="@layout/fragment_coordinator_layout_01">
+
+    </fragment>
+    <fragment
+        android:id="@+id/blankFragment2"
+        android:name="com.application.others.coordinatorlayout.CoordinatorLayoutFragment_02"
+        android:label="coordinator_appbarlayout"
+        tools:layout="@layout/fragment_coordinator_layout_02">
+        <action
+            android:id="@+id/action_blankFragment_02"
+            >
+            <argument
+                android:name="key"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+</navigation>
