@@ -21,6 +21,12 @@
         <action
             android:id="@+id/action_blankFragment0_to_blankFragment2"
             app:destination="@id/blankFragment2" />
+        <action
+            android:id="@+id/action_blankFragment0_to_blankFragment3"
+            app:destination="@id/blankFragment3" />
+        <action
+            android:id="@+id/action_blankFragment0_to_blankFragment4"
+            app:destination="@id/blankFragment4" />
 
     </fragment>
 
@@ -45,5 +51,29 @@
                 app:argType="string" />
         </action>
     </fragment>
+
+    <fragment
+        android:id="@+id/blankFragment3"
+        android:name="com.application.others.coordinatorlayout.CoordinatorLayoutFragment_03"
+        android:label="coordinator_appbarlayout"
+        tools:layout="@layout/fragment_coordinator_layout_03">
+        <action
+            android:id="@+id/action_blankFragment_03"
+            >
+        </action>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/blankFragment4"
+        android:name="com.application.others.coordinatorlayout.CoordinatorLayoutFragment_04"
+        android:label="coordinator_appbarlayout"
+        tools:layout="@layout/fragment_coordinator_layout_04">
+        <action
+            android:id="@+id/action_blankFragment_04"
+            >
+        </action>
+    </fragment>
+
 
 </navigation>

@@ -10,18 +10,11 @@
     tools:context=".coordinatorlayout.CoordinatorLayoutActivity">
 
     <Button
-        android:id="@+id/btn1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="Floating Action Button"
-        />
-    <Button
         android:id="@+id/btn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        app:layout_constraintTop_toBottomOf="@id/btn1"
+        app:layout_constraintTop_toTopOf="parent"
         android:text="AppBarLayout" />
     <Button
         android:id="@+id/btn3"
@@ -29,13 +22,21 @@
         android:layout_height="wrap_content"
         android:textAllCaps="false"
         app:layout_constraintTop_toBottomOf="@id/btn2"
-        android:text="Collapsing ToolBar" />
+        android:text="简单的behavior交互" />
     <Button
         android:id="@+id/btn4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/btn3"
         android:textAllCaps="false"
-        android:text="Custom Behavior" />
+        android:text="仿掘金的behavior" />
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn4"
+        android:textAllCaps="false"
+        android:text="仿美团的behavior"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

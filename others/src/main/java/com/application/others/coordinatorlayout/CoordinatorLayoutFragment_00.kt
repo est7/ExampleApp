@@ -34,6 +34,8 @@ class CoordinatorLayoutFragment_00 : Fragment() {
     private fun initListener() {
         binding.btn2.setOnClickListener { findNavController().navigate(R.id.action_blankFragment0_to_blankFragment1) }
         binding.btn3.setOnClickListener { findNavController().navigate(R.id.action_blankFragment0_to_blankFragment2) }
+        binding.btn4.setOnClickListener { findNavController().navigate(R.id.action_blankFragment0_to_blankFragment3) }
+        binding.btn1.setOnClickListener { findNavController().navigate(R.id.action_blankFragment0_to_blankFragment4) }
     }
 
 }
