@@ -7,13 +7,13 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -21,8 +21,7 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/bg_me_top"
                 app:layout_collapseMode="parallax"
-                app:layout_collapseParallaxMultiplier="0.9"
-                />
+                app:layout_collapseParallaxMultiplier="0.9" />
 
             <FrameLayout
                 android:id="@+id/frameLayout"
@@ -32,8 +31,7 @@
                 android:background="@color/grey_blue"
                 android:orientation="vertical"
                 app:layout_collapseMode="parallax"
-                app:layout_collapseParallaxMultiplier="0.3"
-                >
+                app:layout_collapseParallaxMultiplier="0.3">
 
             </FrameLayout>
 
@@ -41,10 +39,7 @@
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
 
-
-         </com.google.android.material.appbar.AppBarLayout>
-
-
+    </com.google.android.material.appbar.AppBarLayout>
 
 
     <androidx.core.widget.NestedScrollView
@@ -60,5 +55,14 @@
             android:gravity="center_horizontal"
             android:textSize="30sp" />
     </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/red"
+        android:gravity="center_horizontal"
+        android:text="Bottom"
+        android:textSize="30sp"
+        app:layout_behavior=".coordinatorlayout.ScrollToTopBehavior" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
