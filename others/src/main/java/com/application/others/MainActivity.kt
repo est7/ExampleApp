@@ -2,18 +2,28 @@ package com.application.others
 
 import android.content.Context
 import android.content.Intent
+import android.media.ApplicationMediaCapabilities
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.View.OnClickListener
+import android.view.WindowManager
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import com.application.others.coordinatorlayout.CoordinatorLayoutActivity
 import com.application.others.databinding.ActivityMainBinding
+import com.application.others.neumorphismLayout.NeumorphismLayoutActivity
 import com.application.others.recyclerview.SimpleRecycleViewActivity
 import com.example.base.binding
 import com.example.base.startActivity
+import kotlin.reflect.KFunction
+import kotlin.reflect.KProperty
 
+
+//定义的顶层属性
+var topLevelValue = 10
 class MainActivity : AppCompatActivity() {
     private val binding by binding<ActivityMainBinding>()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,12 +35,35 @@ class MainActivity : AppCompatActivity() {
 
     private fun initView() {
         binding.sampleRecycleview.setOnClickListener {
-            startActivity<SimpleRecycleViewActivity>() }
+            startActivity<SimpleRecycleViewActivity>()
+        }
         binding.coordinatorLayout.setOnClickListener {
-            startActivity<CoordinatorLayoutActivity>() }
+            startActivity<CoordinatorLayoutActivity>()
+        }
+        binding.NeumorphismUiComponent.setOnClickListener {
+            startActivity<NeumorphismLayoutActivity>()
+        }
 
     }
 
+
+    @RequiresApi(Build.VERSION_CODES.R)
+    private fun reflect() {
+        val clazz = Class.forName("com.application.others.MainActivity")
+        val method = clazz.getDeclaredMethod("initView")
+        method.invoke(null)
+        val kcallable = MainActivity::binding
+//需要一个接收者
+        val child = MainActivity()
+//进行调用
+
+        val kFunction1 = WindowManager::getCurrentWindowMetrics
+
+
+        val kMutableProperty0 = ::topLevelValue
+        kMutableProperty0.call()
+        kMutableProperty0.set(10)
+    }
 
 
     /* private fun initView() {

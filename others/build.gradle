@@ -17,14 +17,27 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+    signingConfigs {
+        release {
+            keyAlias = 'example'
+            keyPassword = '123456'
+            storeFile = file("../exampleproject.jks")
+            storePassword = '123456'
+        }
+    }
+
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig = signingConfigs.release
         }
     }
+
+
     compileOptions {
+
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
@@ -44,6 +57,7 @@ ext.nav_version = "2.5.3"
 dependencies {
 
     implementation(project(':base'))
+    implementation(project(':synth'))
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'
@@ -66,8 +80,8 @@ dependencies {
     androidTestImplementation("androidx.navigation:navigation-testing:$nav_version")
     // Jetpack Compose Integration
     //implementation("androidx.navigation:navigation-compose:$nav_version")
-
     implementation("com.github.bumptech.glide:glide:4.11.0")
-
+    //反射
+    implementation "org.jetbrains.kotlin:kotlin-reflect"
 
 }
