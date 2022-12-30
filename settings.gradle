@@ -16,6 +16,7 @@ dependencyResolutionManagement {
         google()
         jcenter()
         mavenCentral()
+        maven { url "https://jitpack.io" }
     }
 }
 
@@ -29,4 +30,5 @@ include ':build-logic'
 
 //include ':compose'
 //include ':customview'
+//include ':mviexample'
 include ':others'

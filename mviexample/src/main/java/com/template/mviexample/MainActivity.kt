@@ -1,4 +1,4 @@
-package com.application.example.customview
+package com.template.mviexample
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
