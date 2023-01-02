@@ -10,8 +10,6 @@ plugins {
 
 
 
-
-
 this.beforeEvaluate {
     println "this.beforeEvaluate"
 }

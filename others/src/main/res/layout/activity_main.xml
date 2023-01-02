@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+<androidx.recyclerview.widget.RecyclerView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/recycle_view"
+    />
 
+<!--
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -983,5 +990,6 @@
             android:text="kotlin example"
             android:textAllCaps="false" />
     </LinearLayout>
+-->
 
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

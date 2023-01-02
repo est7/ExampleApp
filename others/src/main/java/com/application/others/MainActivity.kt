@@ -3,15 +3,43 @@ package com.application.others
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.application.others.coordinatorlayout.CoordinatorLayoutActivity
 import com.application.others.databinding.ActivityMainBinding
-import com.application.others.neumorphismLayout.NeumorphismLayoutActivity
 import com.application.others.recyclerview.SimpleRecycleViewActivity
+import com.chad.library.adapter.base.QuickAdapterHelper
 import com.example.base.binding
-import com.example.base.startActivity
 
 class MainActivity : AppCompatActivity() {
+
+    /**
+     * https://github.com/CymChad/BaseRecyclerViewAdapterHelper/wiki/BaseQuickAdapter
+     *
+     */
+    private val list: List<Pair<String, Class<out AppCompatActivity>>>
+        get() = arrayListOf(
+            Pair("CoordinatorLayout", CoordinatorLayoutActivity::class.java),
+            Pair("SimpleRecycleView", SimpleRecycleViewActivity::class.java),
+            Pair("IrregularRectangles", IrregularRectanglesActivity::class.java),
+        )
+
+    private val mainAdapter by lazy(LazyThreadSafetyMode.NONE) {
+        MainAdapter(list).apply {
+            addOnItemChildClickListener(R.id.button) { adapter, view, position ->
+                val item = adapter.getItem(position) as Pair<String, Class<out AppCompatActivity>>
+                startAct(item.second).invoke { }
+            }
+        }
+    }
+
+    private val helper by lazy(LazyThreadSafetyMode.NONE) {
+        QuickAdapterHelper.Builder(mainAdapter).build()
+    }
+
     private val binding by binding<ActivityMainBinding>()
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -19,23 +47,20 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    private fun initView() {
+        // 从 QuickAdapterHelper 获取 adapter，设置给 RecycleView
+        binding.recycleView.layoutManager = LinearLayoutManager(this)
+        binding.recycleView.adapter = helper.adapter
+    }
 
-        private fun initView() {
-            binding.sampleRecycleview.setOnClickListener {
-                startActivity<SimpleRecycleViewActivity>()
-            }
-            binding.coordinatorLayout.setOnClickListener {
-                startActivity<CoordinatorLayoutActivity>()
-            }
-            binding.NeumorphismUiComponent.setOnClickListener {
-                startActivity<NeumorphismLayoutActivity>()
-            }
-
-            binding.IrregularRectangles.setOnClickListener {
-                startActivity<IrregularRectanglesActivity>()
+    val startAct = { clazz: Class<*> ->
+        { extras: Intent.() -> Unit ->
+            Intent(this@MainActivity, clazz).apply(extras).also {
+                startActivity(it)
             }
         }
 
+    }
 
     /* private fun initView() {
          btn_room.setOnClickListener { startActivity(RoomActivity::class.java) }

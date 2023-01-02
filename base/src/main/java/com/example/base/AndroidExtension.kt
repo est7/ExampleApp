@@ -53,6 +53,7 @@ class LifecycleDestroy(var lifecycle: Lifecycle?, val destroyed: () -> Unit) :
 }
 
 inline fun <reified T> Context.startActivity(extras: Intent.() -> Unit = {}) {
+
     Intent(this, T::class.java).apply(extras).also { startActivity(it) }
 }
 
