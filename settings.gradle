@@ -27,8 +27,6 @@ rootProject.name = "ExampleApp"
 include ':base'
 include ':build-logic'
 
-
 //include ':compose'
 //include ':customview'
-include ':synth'
 include ':others'

@@ -57,7 +57,6 @@ ext.nav_version = "2.5.3"
 dependencies {
 
     implementation(project(':base'))
-    implementation(project(':synth'))
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'
@@ -83,5 +82,8 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.11.0")
     //反射
     implementation "org.jetbrains.kotlin:kotlin-reflect"
+
+    //BRVAH
+    implementation "io.github.cymchad:BaseRecyclerViewAdapterHelper:4.0.0-beta02"
 
 }

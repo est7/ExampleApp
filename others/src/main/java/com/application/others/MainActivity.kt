@@ -44,25 +44,9 @@ class MainActivity : AppCompatActivity() {
             startActivity<NeumorphismLayoutActivity>()
         }
 
-    }
-
-
-    @RequiresApi(Build.VERSION_CODES.R)
-    private fun reflect() {
-        val clazz = Class.forName("com.application.others.MainActivity")
-        val method = clazz.getDeclaredMethod("initView")
-        method.invoke(null)
-        val kcallable = MainActivity::binding
-//需要一个接收者
-        val child = MainActivity()
-//进行调用
-
-        val kFunction1 = WindowManager::getCurrentWindowMetrics
-
-
-        val kMutableProperty0 = ::topLevelValue
-        kMutableProperty0.call()
-        kMutableProperty0.set(10)
+        binding.IrregularRectangles.setOnClickListener {
+            startActivity<IrregularRectanglesActivity>()
+        }
     }
 
 

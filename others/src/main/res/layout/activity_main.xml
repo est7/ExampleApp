@@ -29,6 +29,13 @@
             android:text="NeumorphismUiComponent"
             android:textAllCaps="false" />
 
+        <Button
+            android:id="@+id/IrregularRectangles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Irregular rounded rectangles"
+            android:textAllCaps="false" />
+
 
         <Button
             android:id="@+id/sharedFlow"
