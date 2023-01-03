@@ -1,4 +1,4 @@
-package  com.application.example.不规则头像.view
+package  com.application.example.squareavatarview
 
 import android.content.Context
 import android.graphics.Canvas
@@ -10,12 +10,11 @@ import android.os.Build
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatImageView
 import com.application.example.customview.R
-import com.application.example.不规则头像.view.Direction.LEFT
-import com.application.example.不规则头像.view.Direction.NONE
-import com.application.example.不规则头像.view.Direction.TOP
-import com.application.example.不规则头像.view.Direction.RIGHT
-import com.application.example.不规则头像.view.Direction.BOTTOM
-import com.application.example.dp
+import com.application.example.squareavatarview.Direction.LEFT
+import com.application.example.squareavatarview.Direction.NONE
+import com.application.example.squareavatarview.Direction.TOP
+import com.application.example.squareavatarview.Direction.RIGHT
+import com.application.example.squareavatarview.Direction.BOTTOM
 import kotlin.math.sqrt
 
 

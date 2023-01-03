@@ -1,4 +1,4 @@
-package com.application.example.不规则头像.view
+package com.application.example.squareavatarview
 
 /**
  *
