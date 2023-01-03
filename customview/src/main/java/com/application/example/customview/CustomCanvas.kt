@@ -5,6 +5,7 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Path
+import android.graphics.Picture
 import android.graphics.Rect
 import android.util.AttributeSet
 import android.view.View
@@ -26,12 +27,6 @@ class CustomCanvas @JvmOverloads constructor(
 
 
     private fun drawPos(canvas: Canvas) {
-        //设置画笔圆帽
-        mRedPaint.strokeCap = Paint.Cap.ROUND
-        mRedPaint.strokeWidth = 20F
-        //绘制点
-        canvas.drawPoint(100F, 100F, mRedPaint)
-        canvas.drawPoints(floatArrayOf(200F, 100F, 200F, 200F, 200F, 300F), mRedPaint)
     }
 
 

@@ -1,6 +1,5 @@
 package  com.application.example.customview
 
-import android.R
 import android.content.Context
 import android.graphics.BitmapFactory
 import android.graphics.BitmapShader
@@ -13,6 +12,7 @@ import android.graphics.ComposePathEffect
 import android.graphics.CornerPathEffect
 import android.graphics.DashPathEffect
 import android.graphics.DiscretePathEffect
+import android.graphics.EmbossMaskFilter
 import android.graphics.LightingColorFilter
 import android.graphics.LinearGradient
 import android.graphics.Matrix
@@ -81,10 +81,41 @@ class CustomPaint @JvmOverloads constructor(
 //        setTextShadowLayer(canvas)
 //        setFilterBitmap(canvas)
         setMaskFilter(canvas)
+//        setMaskFilterBitmap(canvas)
     }
 
 
     private fun setMaskFilter(canvas: Canvas) {
+        canvas.save()
+        // 设置画笔遮罩滤镜 ,传入度数和样式
+        mGreenPaint.style = Paint.Style.FILL
+        mGreenPaint.maskFilter = BlurMaskFilter(20f, BlurMaskFilter.Blur.NORMAL)
+        canvas.drawRect(0f, 0f, 200f, 200f, mGreenPaint)
+        canvas.translate(0f, 300f)
+
+        mGreenPaint.maskFilter = BlurMaskFilter(20f, BlurMaskFilter.Blur.INNER)
+        canvas.drawRect(0f, 0f, 200f, 200f, mGreenPaint)
+        canvas.translate(0f, 300f)
+
+        mGreenPaint.maskFilter = BlurMaskFilter(20f, BlurMaskFilter.Blur.OUTER)
+        canvas.drawRect(0f, 0f, 200f, 200f, mGreenPaint)
+        canvas.translate(0f, 300f)
+
+        mGreenPaint.maskFilter = BlurMaskFilter(20f, BlurMaskFilter.Blur.SOLID)
+        canvas.drawRect(0f, 0f, 200f, 200f, mGreenPaint)
+        canvas.translate(0f, 300f)
+
+
+        mRedPaint.setTextSize(300F)
+        setLayerType(LAYER_TYPE_SOFTWARE, null);
+        mRedPaint.setMaskFilter(EmbossMaskFilter(floatArrayOf(2f, 2f, 2f), 0.3f, 8f, 3f))
+        canvas.drawText("Hello World", 0f, 0f, mRedPaint)
+
+        canvas.restore()
+    }
+
+
+    private fun setMaskFilterBitmap(canvas: Canvas) {
         canvas.save()
 
         val srcBitmap = BitmapFactory.decodeResource(resources, R.drawable.rank_banner_avatar_5)

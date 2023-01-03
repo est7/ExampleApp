@@ -11,11 +11,26 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>-->
 
+
+  <!--
     <com.application.example.customview.CustomPaint
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/beige"
         android:clipChildren="false" />
+-->
 
+<!--
+    <com.application.example.customview.CustomCanvasXferMode
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/beige"
+        android:clipChildren="false" />
+-->
+  <com.application.example.customview.CustomCanvasDrawAndClip
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/beige"
+      android:clipChildren="false" />
 
 </LinearLayout>
