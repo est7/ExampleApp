@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ExampleApp">
         <activity
-            android:name=".IrregularRectanglesActivity"
+            android:name=".irregularrectangles.IrregularRectanglesActivity"
             android:exported="false" />
         <activity
             android:name=".neumorphismLayout.NeumorphismLayoutActivity"

@@ -3,10 +3,10 @@ package com.application.others
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.application.others.coordinatorlayout.CoordinatorLayoutActivity
 import com.application.others.databinding.ActivityMainBinding
+import com.application.others.irregularrectangles.IrregularRectanglesActivity
 import com.application.others.recyclerview.SimpleRecycleViewActivity
 import com.chad.library.adapter.base.QuickAdapterHelper
 import com.example.base.binding
