@@ -26,10 +26,27 @@ enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 rootProject.name = "ExampleApp"
 
 include ':base'
+
+//统一各个模块依赖库的版本号
 include ':build-logic'
 
+
+//compose使用的demo
 //include ':compose'
+
+//绘制自定义view的demo
 //include ':customview'
-//include ':mviexample'
-include ':others'
+
+//拖拽view的demo
 //include ':motionanddragevent'
+
+
+//mvi arch的的demo
+include ':mviexample'
+
+//其他乱七八糟各种三方库使用的demo
+include ':others'
+
+//测试kotlin的一些语法的demo
+include ':kotlinsamples'
+include ':stateflow-sharedflow-channel'

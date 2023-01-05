@@ -15,6 +15,8 @@ import com.application.template.ui.theme.ExampleAppTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //https://medium.com/mobile-at-octopus-energy/architecture-in-jetpack-compose-mvp-mvvm-mvi-17d8170a13fd
+
         setContent {
             ExampleAppTheme {
                 // A surface container using the 'background' color from the theme

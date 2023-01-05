@@ -1,5 +1,6 @@
 package com.template.mviexample
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import com.template.mviexample.util.SingleLiveEvent
 import junit.framework.TestCase.assertEquals
 import junit.framework.TestCase.assertNull
 import org.junit.Rule

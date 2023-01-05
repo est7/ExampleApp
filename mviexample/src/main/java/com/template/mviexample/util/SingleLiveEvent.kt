@@ -1,4 +1,4 @@
-package com.template.mviexample
+package com.template.mviexample.util
 
 import android.util.Log
 import androidx.annotation.MainThread
