@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ExampleApp">
         <activity
+            android:name=".flow_channel_recycleview_diffutil.FlowChannelDiffUtilsActivity"
+            android:exported="false" />
+        <activity
             android:name=".deeplink.WebLinkActivity"
             android:exported="false" />
         <activity

@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.application.others.coordinatorlayout.CoordinatorLayoutActivity
 import com.application.others.databinding.ActivityMainBinding
 import com.application.others.deeplink.DeeplinkActivity
+import com.application.others.flow_channel_recycleview_diffutil.FlowChannelDiffUtilsActivity
 import com.application.others.irregularrectangles.IrregularRectanglesActivity
 import com.application.others.recyclerview.SimpleRecycleViewActivity
 import com.chad.library.adapter.base.QuickAdapterHelper
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
             Pair("SimpleRecycleView", SimpleRecycleViewActivity::class.java),
             Pair("IrregularRectangles", IrregularRectanglesActivity::class.java),
             Pair("DeepLink", DeeplinkActivity::class.java),
+            Pair("Flow_Channel_DiffUtils", FlowChannelDiffUtilsActivity::class.java),
         )
 
     private val mainAdapter by lazy(LazyThreadSafetyMode.NONE) {

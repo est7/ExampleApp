@@ -1,7 +1,10 @@
+/*
 @file:Suppress("unused")
 
-package com.xiaoma.flow.func.ktx
+package com.example.utils.ktx
 
+import com.example.utils.ktx.logW
+import com.example.utils.ktx.use
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runInterruptible
 import kotlinx.coroutines.withContext
@@ -36,3 +39,4 @@ suspend fun File.md5() = withContext(Dispatchers.Default) {
         ""
     }
 }
+*/

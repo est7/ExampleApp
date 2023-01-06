@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.xiaoma.flow.func.ktx
+package com.example.utils.ktx
 
 import android.view.View
 import android.view.ViewGroup

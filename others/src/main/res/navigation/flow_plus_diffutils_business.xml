@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/flowchannelmainFragment">
+
+    <fragment
+        android:id="@+id/flowchannelmainFragment"
+        android:name="com.application.others.flow_channel_recycleview_diffutil.fragment.MainFragment"
+        android:label="Flow_Channel_MainFragment"
+        tools:layout="@layout/fragment_flow_channel_main">
+
+        <action
+            android:id="@+id/toChannel"
+            app:destination="@+id/channelFragment" />
+
+        <action
+            android:id="@+id/toFlow"
+            app:destination="@+id/flowFragment" />
+
+        <action
+            android:id="@+id/toSharedFlow"
+            app:destination="@+id/sharedFlowFragment" />
+
+        <action
+            android:id="@+id/toStateFlow"
+            app:destination="@+id/stateFlowFragment" />
+
+        <action
+            android:id="@+id/toStructuredConcurrency"
+            app:destination="@+id/structuredConcurrencyFragment" />
+
+        <action
+            android:id="@+id/toBackgroundFragment"
+            app:destination="@+id/backgroundFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/channelFragment"
+        android:name="com.application.others.flow_channel_recycleview_diffutil.fragment.ChannelFragment"
+        android:label="Channel"
+        tools:layout="@layout/fragment_empty" />
+
+    <fragment
+        android:id="@+id/flowFragment"
+        android:name="com.application.others.flow_channel_recycleview_diffutil.fragment.FlowFragment"
+        android:label="Flow"
+        tools:layout="@layout/fragment_empty" />
+
+    <fragment
+        android:id="@+id/sharedFlowFragment"
+        android:name="com.application.others.flow_channel_recycleview_diffutil.fragment.SharedFlowFragment"
+        android:label="SharedFlow"
+        tools:layout="@layout/fragment_empty" />
+
+    <fragment
+        android:id="@+id/stateFlowFragment"
+        android:name="com.application.others.flow_channel_recycleview_diffutil.fragment.StateFlowFragment"
+        android:label="StateFlow"
+        tools:layout="@layout/fragment_empty" />
+
+    <fragment
+        android:id="@+id/structuredConcurrencyFragment"
+        android:name="com.application.others.flow_channel_recycleview_diffutil.fragment.StructuredConcurrencyFragment"
+        android:label="StructuredConcurrencyFragment"
+        tools:layout="@layout/fragment_empty" />
+
+    <fragment
+        android:id="@+id/backgroundFragment"
+        android:name="com.application.others.flow_channel_recycleview_diffutil.fragment.BackgroundFragment"
+        android:label="BackgroundFragment"
+        tools:layout="@layout/fragment_empty" />
+
+</navigation>

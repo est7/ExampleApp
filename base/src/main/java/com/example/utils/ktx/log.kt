@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.xiaoma.flow.func.ktx
+package com.example.utils.ktx
 
 import android.util.Log
 
@@ -85,7 +85,7 @@ fun String.log(
 
     val logLocate = if (methodStack != null && trace) "> at $methodStack$ln" else ""
     val finalTag = "LOG_TAG[${getTag(tag, methodStack)}]"
-    val finalLog = "　$ln$logLocate$this"
+    val finalLog = "\uD83E\uDD2A$ln$logLocate$this"
 
     if (e != null) {
         when (level) {

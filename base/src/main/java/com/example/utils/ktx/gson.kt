@@ -3,7 +3,7 @@ package com.example.utils.ktx
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.xiaoma.flow.func.ktx.logW
+import com.example.utils.ktx.logW
 
 inline fun <reified T> String.fromJson(): T? = try {
     val type = object : TypeToken<T>() {}.type

@@ -43,6 +43,13 @@ abstract class BaseViewModel<Event : UiEvent, State : UiState, Effect : UiEffect
                 handleEvent(it)
             }
         }
+
+        //或者：
+
+      /*  _event.onEach {
+            handleEvent(it)
+        }.launchIn(viewModelScope)*/
+
     }
 
     fun setEvent(event: Event) {
