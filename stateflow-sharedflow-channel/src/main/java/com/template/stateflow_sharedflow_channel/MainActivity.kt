@@ -42,12 +42,13 @@ class MainActivity : AppCompatActivity() {
         binding.apply {
             viewmodel.liveData.observe(this@MainActivity) { data ->
                 liveDataT.text = data
+//                Snackbar.make(root, data, Snackbar.LENGTH_SHORT).show()
             }
 
             lifecycleScope.launchWhenStarted {
                 viewmodel.stateFlow.collectLatest { data ->
                     stateFlowT.text = data
-                    Snackbar.make(root, data, Snackbar.LENGTH_SHORT).show()
+//                    Snackbar.make(root, data, Snackbar.LENGTH_SHORT).show()
                 }
             }
 
@@ -59,11 +60,9 @@ class MainActivity : AppCompatActivity() {
             }
 
 
-
-
             lifecycleScope.launchWhenStarted {
                 viewmodel.channel.collectLatest {
-                    binding.channelT.text =binding.channelT.text.toString() + it
+                    binding.channelT.text = binding.channelT.text.toString() + it
                 }
             }
 
@@ -99,7 +98,6 @@ class MainActivity : AppCompatActivity() {
             viewmodel.updateSharedFlow()
         }
     }
-
 
 
     private fun onChannel() {

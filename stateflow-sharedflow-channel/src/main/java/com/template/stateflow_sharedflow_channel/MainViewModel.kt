@@ -7,9 +7,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.Channel.Factory.RENDEZVOUS
+import kotlinx.coroutines.channels.produce
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
@@ -22,23 +25,24 @@ import kotlinx.coroutines.launch
 @HiltViewModel
 class MainViewModel @Inject constructor(application: Application) : AndroidViewModel(application) {
 
-    private val initialValue = "Hello World!"
+    private val initialValue_livedata = "Hello World!_livedata"
+    private val initialValue_statedata = "Hello World!_statedata"
 
     //livedata可以不设置初始值，但是stateFlow没有空参构造
-    //private val _liveData = MutableLiveData<String>()
-    private val _liveData = MutableLiveData(initialValue)
+//    private val _liveData = MutableLiveData<String>()
+    private val _liveData = MutableLiveData(initialValue_livedata)
     val liveData: LiveData<String> = _liveData
 
 
     //stateFlow is hot
-    private val _stateFlow = MutableStateFlow(initialValue)
+    private val _stateFlow = MutableStateFlow(initialValue_statedata)
     val stateFlow = _stateFlow.asStateFlow()
 
 
     //冷流，不会发射任何值，直到有订阅者
     private val _flow: Flow<String> = flow {
         repeat(5) { count ->
-            emit("Hello $count")
+            emit("Hello_flow $count")
             //在 Kotlin 1.1 起，数字常量支持下滑下 _ 按位分隔，使数字更易读。比如：
             //
             //按英文方式断位： 1_000 ，1_000_000
@@ -61,13 +65,25 @@ class MainViewModel @Inject constructor(application: Application) : AndroidViewM
     //名字本身就说明它是共享的，这个流量可以被多个消费者共享，
     // 如果在share stream上发生多个collect call，将有一个单一的stream在所有消费者之间共享，这与普通流量不同。
     private val _sharedFlow = MutableSharedFlow<String>()
-    val sharedFlow = _sharedFlow.asSharedFlow()
 
-    //
+
+    /**
+     * 测试重放
+     *
+     *  replay - 重播给新订阅者的值的数量（不能为负数，默认为零）。
+     *  extraBufferCapacity - 除了replay之外缓冲的值的数量。当有剩余的缓冲区空间时， emit不会挂起（可选，不能为负数，默认为零）。
+     * onBufferOverflow - 配置缓冲区溢出时的emit操作。可选，默认为suspending发出值的尝试。
+     * 仅当replay > 0或extraBufferCapacity > 0时才支持BufferOverflow.SUSPEND以外的值。
+     * 只有当至少有一个订阅者还没有准备好接受新值时，才会发生缓冲区溢出。
+     * 在没有订阅者的情况下，只会存储最近的replay值，并且不会触发缓冲区溢出行为，也不会产生任何影响。
+     */
     private val _sharedFlowTest = MutableSharedFlow<String>(
-        replay = 1, extraBufferCapacity = 0, onBufferOverflow = BufferOverflow.SUSPEND
+        replay = 1,
+        extraBufferCapacity = 0,
+        onBufferOverflow = BufferOverflow.SUSPEND
     )
 
+    val sharedFlow = _sharedFlowTest.asSharedFlow()
 
     /**
      *
@@ -97,6 +113,23 @@ class MainViewModel @Inject constructor(application: Application) : AndroidViewM
         }
     )
 
+    @OptIn(ExperimentalCoroutinesApi::class)
+    private fun CoroutineScope.makeChannel() = produce {
+        println("Channel started")
+        for (i in 1..5) {
+            delay(1_000)
+            send(i)
+        }
+        /*
+                repeat(5) { count ->
+                    _channel.send("Hi_chan $count ,")
+                    delay(1_000)
+                }
+        */
+
+    }
+
+
     val channel = _channel.receiveAsFlow()
 
 
@@ -121,16 +154,22 @@ class MainViewModel @Inject constructor(application: Application) : AndroidViewM
 
     fun updateSharedFlow() {
         viewModelScope.launch {
-            _sharedFlow.emit(getApplication<Application>().applicationContext.resources.getString(R.string.sharedflow))
+//            _sharedFlow.emit(getApplication<Application>().applicationContext.resources.getString(R.string.sharedflow))
+            _sharedFlowTest.emit(
+                getApplication<Application>().applicationContext.resources.getString(
+                    R.string.sharedflow
+                )
+            )
 
         }
     }
 
 
-    fun updateChannel(){
+    @OptIn(ExperimentalCoroutinesApi::class)
+    fun updateChannel() {
         viewModelScope.launch {
             repeat(5) { count ->
-                _channel.send("Hi $count ,")
+                _channel.send("Hi_chan $count ,")
                 delay(1_000)
             }
         }

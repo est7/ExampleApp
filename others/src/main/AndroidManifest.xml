@@ -16,6 +16,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ExampleApp">
         <activity
+            android:name=".deeplink.WebLinkActivity"
+            android:exported="false" />
+        <activity
+            android:name=".deeplink.DeeplinkActivity"
+            android:exported="false" />
+        <activity
+            android:name=".deeplink.DirectActivity"
+            android:exported="false" />
+        <activity
             android:name=".irregularrectangles.IrregularRectanglesActivity"
             android:exported="false" />
         <activity

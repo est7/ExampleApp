@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.application.others.coordinatorlayout.CoordinatorLayoutActivity
 import com.application.others.databinding.ActivityMainBinding
+import com.application.others.deeplink.DeeplinkActivity
 import com.application.others.irregularrectangles.IrregularRectanglesActivity
 import com.application.others.recyclerview.SimpleRecycleViewActivity
 import com.chad.library.adapter.base.QuickAdapterHelper
@@ -22,13 +23,14 @@ class MainActivity : AppCompatActivity() {
             Pair("CoordinatorLayout", CoordinatorLayoutActivity::class.java),
             Pair("SimpleRecycleView", SimpleRecycleViewActivity::class.java),
             Pair("IrregularRectangles", IrregularRectanglesActivity::class.java),
+            Pair("DeepLink", DeeplinkActivity::class.java),
         )
 
     private val mainAdapter by lazy(LazyThreadSafetyMode.NONE) {
         MainAdapter(list).apply {
             addOnItemChildClickListener(R.id.button) { adapter, view, position ->
                 val item = adapter.getItem(position) as Pair<String, Class<out AppCompatActivity>>
-                startAct(item.second).invoke { }
+                startAct(item.second).invoke {  }
             }
         }
     }
@@ -53,6 +55,8 @@ class MainActivity : AppCompatActivity() {
         binding.recycleView.adapter = helper.adapter
     }
 
+
+
     val startAct = { clazz: Class<*> ->
         { extras: Intent.() -> Unit ->
             Intent(this@MainActivity, clazz).apply(extras).also {
@@ -61,6 +65,7 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
 
     /* private fun initView() {
          btn_room.setOnClickListener { startActivity(RoomActivity::class.java) }
