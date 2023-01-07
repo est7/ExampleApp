@@ -1,0 +1,120 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    //for hilt
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
+}
+
+android {
+    namespace 'com.example.mvvmjetpack'
+    compileSdk 33
+
+    defaultConfig {
+        minSdk 24
+        targetSdk 33
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+
+
+
+dependencies {
+    implementation(project(':base'))
+
+    //navigation
+    def nav_version = "2.5.3"
+    implementation("androidx.navigation:navigation-fragment:$nav_version")
+    implementation("androidx.navigation:navigation-ui:$nav_version")
+
+    // viewModel
+    def lifecycleVersion = "2.5.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
+    // Saved state module for ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycleVersion"
+
+
+
+    implementation "androidx.fragment:fragment-ktx:1.5.5"
+
+    // room
+    def room_version = "2.4.3"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+    // To use Kotlin annotation processing tool (kapt)
+    kapt "androidx.room:room-compiler:$room_version"
+    // To use Kotlin Symbol Processing (KSP)
+    androidTestImplementation "androidx.room:room-testing:$room_version"
+    // optional - Paging 3 Integration
+    implementation "androidx.room:room-paging:$room_version"
+
+    // paging
+    def pagingVersion = "3.1.1"
+    implementation ("androidx.paging:paging-runtime:$pagingVersion")
+    implementation ("androidx.paging:paging-common:$pagingVersion")
+
+    // Coroutines
+    def coroutines_version = '1.6.4'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+    //noinspection GradleDependency
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+
+
+    //startp
+    def startupVersion = "1.1.1"
+    implementation "androidx.startup:startup-runtime:$startupVersion"
+
+    //WorkManager
+    implementation "androidx.work:work-runtime-ktx:2.7.1"
+
+    // DataStore
+    implementation "androidx.datastore:datastore-preferences:1.0.0"
+    implementation "androidx.datastore:datastore-core:1.0.0"
+    //mmkv
+    implementation "com.tencent:mmkv:1.2.14"
+
+    // Ktor
+//    implementation "io.ktor:ktor-server-core:2.2.2"
+//    implementation "io.ktor:ktor-server-netty:2.2.2"
+
+    // dagger android
+    implementation 'com.google.dagger:hilt-android:2.44.2'
+    kapt 'com.google.dagger:hilt-compiler:2.44.2'
+
+    //Coil
+    implementation("io.coil-kt:coil:2.2.2")
+
+    //BRVAH
+    implementation "io.github.cymchad:BaseRecyclerViewAdapterHelper:4.0.0-beta04"
+
+
+
+    // SweetDialog
+//implementation "com.github.f0ris.sweetalert:library:$rootProject.sweetVersion"
+
+    // Lottie
+//    implementation "com.airbnb.android:lottie:${lottieVersion}"
+
+
+}

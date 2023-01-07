@@ -30,7 +30,6 @@ include ':base'
 //统一各个模块依赖库的版本号
 include ':build-logic'
 
-
 //compose使用的demo
 //include ':compose'
 
@@ -42,11 +41,16 @@ include ':build-logic'
 
 
 //mvi arch的的demo
-include ':mviexample'
+//include ':mviexample'
 
 //其他乱七八糟各种三方库使用的demo
 include ':others'
 
 //测试kotlin的一些语法的demo
-include ':kotlinsamples'
-include ':stateflow-sharedflow-channel'
+//include ':kotlinsamples'
+
+//测试stateflow跟sharedflow-channel的demo
+//include ':stateflow-sharedflow-channel'
+
+//使用jetpack mvvm的demo
+include ':mvvmjetpack'
