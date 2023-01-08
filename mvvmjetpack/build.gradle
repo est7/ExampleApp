@@ -4,6 +4,10 @@ plugins {
     //for hilt
     id 'kotlin-kapt'
     id 'com.google.dagger.hilt.android'
+    //for ktor
+    id 'org.jetbrains.kotlin.plugin.serialization'
+    id 'org.jetbrains.kotlin.plugin.parcelize'
+
 }
 
 android {
@@ -31,13 +35,17 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    viewBinding {
+        enabled = true
+    }
 }
-
-
 
 
 dependencies {
     implementation(project(':base'))
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
     //navigation
     def nav_version = "2.5.3"
@@ -52,7 +60,6 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
     // Saved state module for ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycleVersion"
-
 
 
     implementation "androidx.fragment:fragment-ktx:1.5.5"
@@ -71,8 +78,8 @@ dependencies {
 
     // paging
     def pagingVersion = "3.1.1"
-    implementation ("androidx.paging:paging-runtime:$pagingVersion")
-    implementation ("androidx.paging:paging-common:$pagingVersion")
+    implementation("androidx.paging:paging-runtime:$pagingVersion")
+    implementation("androidx.paging:paging-common:$pagingVersion")
 
     // Coroutines
     def coroutines_version = '1.6.4'
@@ -95,8 +102,13 @@ dependencies {
     implementation "com.tencent:mmkv:1.2.14"
 
     // Ktor
-//    implementation "io.ktor:ktor-server-core:2.2.2"
-//    implementation "io.ktor:ktor-server-netty:2.2.2"
+    def ktor_version = "2.2.0"
+    implementation "io.ktor:ktor-client-core:$ktor_version"
+    implementation "io.ktor:ktor-client-android:$ktor_version"
+    implementation "io.ktor:ktor-client-content-negotiation:$ktor_version"
+    implementation "io.ktor:ktor-serialization-kotlinx-json:$ktor_version"
+    implementation "io.ktor:ktor-client-logging:$ktor_version"
+
 
     // dagger android
     implementation 'com.google.dagger:hilt-android:2.44.2'
@@ -107,7 +119,6 @@ dependencies {
 
     //BRVAH
     implementation "io.github.cymchad:BaseRecyclerViewAdapterHelper:4.0.0-beta04"
-
 
 
     // SweetDialog

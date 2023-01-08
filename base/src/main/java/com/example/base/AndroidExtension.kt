@@ -10,6 +10,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.viewbinding.ViewBinding
+import com.example.utils.keyboard.FluidContentResizer
 import java.lang.reflect.Method
 
 /**
@@ -22,6 +23,9 @@ inline fun <reified T : ViewBinding> Activity.binding() =
 
 inline fun <reified T : ViewBinding> Fragment.binding() =
     FragmentViewBindingDelegate(this, T::class.java)
+
+//流畅显示keyboard
+fun Activity.actAsFluid() = FluidContentResizer.listen(this)
 
 fun <T> Class<T>.bindMethod(): Method =
     getMethod("bind", View::class.java)

@@ -11,6 +11,9 @@ import com.application.others.databinding.ActivityCoordinatorLayoutBinding
 import com.example.base.binding
 
 
+/**
+ * https://github.com/imurluck/HeaderLayout 一个可以自定义头部的CoordinatorLayout
+ */
 class CoordinatorLayoutActivity : AppCompatActivity() {
     private val binding by binding<ActivityCoordinatorLayoutBinding>()
     override fun onCreate(savedInstanceState: Bundle?) {
