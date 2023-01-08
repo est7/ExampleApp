@@ -1,4 +1,4 @@
-package com.example.mvvmjetpack.data.entities.transform
+package com.example.mvvmjetpack.data.mapper
 
 import com.example.mvvmjetpack.base.ITransformer
 import com.example.mvvmjetpack.data.entities.LoginEntity

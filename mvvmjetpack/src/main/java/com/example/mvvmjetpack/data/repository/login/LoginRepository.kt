@@ -1,14 +1,12 @@
 package com.example.mvvmjetpack.data.repository.login
 
-import com.example.mvvmjetpack.data.entities.LoginEntity
 import com.example.mvvmjetpack.data.source.local.LoginLocalDataSource
 import com.example.mvvmjetpack.data.source.remote.LoginRemoteDataSource
 import com.example.mvvmjetpack.domain.contract.ILoginRepository
-import com.example.mvvmjetpack.data.entities.transform.UserInfoTransform
+import com.example.mvvmjetpack.data.mapper.UserInfoTransform
 import com.example.mvvmjetpack.domain.model.UserInfo
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.onEach
 
 class LoginRepository(
     private val loginLocalDataSource: LoginLocalDataSource,

@@ -1,12 +1,9 @@
 package com.example.mvvmjetpack.domain.usercase.login
 
-import com.example.mvvmjetpack.data.entities.transform.UserInfoTransform
 import com.example.mvvmjetpack.domain.base.BaseUserCase
 import com.example.mvvmjetpack.domain.contract.ILoginRepository
 import com.example.mvvmjetpack.domain.model.UserInfo
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.onEach
 
 /**
  * 在Use Case层中进行数据的操作和转化，
