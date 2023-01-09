@@ -3,6 +3,8 @@ package com.example.mvvmjetpack.presentation.login
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.widget.Toast
 import com.example.base.binding
 import com.example.mvvmjetpack.MainActivity
@@ -33,6 +35,8 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        setContentView(binding.root)
 
         setupViews()
         observeEvents()
@@ -84,7 +88,13 @@ class LoginActivity : AppCompatActivity() {
 
 
     private fun switchLoading(visible: Boolean) {
-        binding.loading.visibility =
-            if (visible) android.view.View.VISIBLE else android.view.View.GONE
+        if (binding.loading.isShown != visible) {
+            if (visible) {
+                binding.loading.show()
+            } else {
+                binding.loading.hide()
+            }
+        }
     }
+
 }

@@ -9,7 +9,6 @@
     <androidx.core.widget.ContentLoadingProgressBar
         android:layout_width="40dp"
         android:id="@+id/loading"
-        android:visibility="gone"
         style="@style/WrapWrap.ConstraintCenter"
         android:layout_height="40dp"
         tools:ignore="MissingConstraints" />
