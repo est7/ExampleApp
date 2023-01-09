@@ -73,6 +73,7 @@ class LoginActivity : AppCompatActivity() {
 
                     LoginState.Idle -> {
                         //初始状态，可以从本地获取数据
+                        switchLoading(false)
                     }
 
                     LoginState.Loading -> {

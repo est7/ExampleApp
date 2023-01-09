@@ -6,12 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".presentation.login.LoginActivity">
 
-    <androidx.core.widget.ContentLoadingProgressBar
-        android:layout_width="40dp"
-        android:id="@+id/loading"
-        style="@style/WrapWrap.ConstraintCenter"
-        android:layout_height="40dp"
-        tools:ignore="MissingConstraints" />
     <TextView
         android:id="@+id/tv_title"
         style="@style/WrapWrap.ConstraintCenter"
@@ -63,5 +57,14 @@
         app:layout_constraintVertical_bias="0.8"
         tools:ignore="MissingConstraints" />
 
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:layout_width="wrap_content"
+        android:id="@+id/loading"
+        android:layout_height="wrap_content"
+        style="@style/WrapWrap.ConstraintCenter"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
