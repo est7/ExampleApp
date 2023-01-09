@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".presentation.login.LoginActivity">
 
+    <androidx.core.widget.ContentLoadingProgressBar
+        android:layout_width="40dp"
+        android:id="@+id/loading"
+        android:visibility="gone"
+        style="@style/WrapWrap.ConstraintCenter"
+        android:layout_height="40dp"
+        tools:ignore="MissingConstraints" />
     <TextView
         android:id="@+id/tv_title"
         style="@style/WrapWrap.ConstraintCenter"

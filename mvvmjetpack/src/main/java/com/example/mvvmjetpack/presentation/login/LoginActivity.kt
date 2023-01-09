@@ -6,9 +6,14 @@ import android.os.Bundle
 import android.widget.Toast
 import com.example.base.binding
 import com.example.mvvmjetpack.MainActivity
+import com.example.mvvmjetpack.data.apiservices.user.UserApi
 import com.example.mvvmjetpack.data.repository.login.LoginRepository
+import com.example.mvvmjetpack.data.source.local.LoginLocalDataSource
+import com.example.mvvmjetpack.data.source.remote.LoginRemoteDataSource
 import com.example.mvvmjetpack.databinding.ActivityLoginBinding
+import com.example.mvvmjetpack.domain.usercase.login.LoginUserCase
 import com.example.utils.ktx.launchRepeatOnCreated
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -16,7 +21,15 @@ import dagger.hilt.android.AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
     private val binding by binding<ActivityLoginBinding>()
 
-    private val loginModel by lazy { LoginViewModel(LoginRepository()) }
+    private val loginViewModel by lazy {
+        LoginViewModel(
+            LoginUserCase(
+                LoginRepository(
+                    LoginLocalDataSource(), LoginRemoteDataSource(UserApi())
+                )
+            )
+        )
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,39 +39,52 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun setupViews() {
+//        binding.etAccount
+//        binding.etPwd
 
         binding.btnLogin.setOnClickListener {
-            loginModel.login()?.observe(this, Observer { user ->
-                user?.let {
-                    AppPrefsUtils.putLong(BaseConstant.SP_USER_ID, it.id)
-                    AppPrefsUtils.putString(BaseConstant.SP_USER_NAME, it.account)
-                    val intent = Intent(context, MainActivity::class.java)
-                    context!!.startActivity(intent)
-                    Toast.makeText(context, "登录成功！", Toast.LENGTH_SHORT).show()
-                }
-            })
+            loginViewModel.login(binding.etAccount.text.toString(), binding.etPwd.text.toString())
 
         }
 
         binding.btnRegister.setOnClickListener {
 
         }
-
-        binding.etAccountk
-
-        binding.etPwd
     }
 
     private fun observeEvents() {
         launchRepeatOnCreated {
+            loginViewModel.loginState.collect {
+                when (it) {
+                    is LoginState.Success -> {
+                        switchLoading(false)
+                        startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+                        finish()
+                    }
 
-//            nfcViewModel.event.collect {
-//                when (it) {
-//                    NfcState.WrongCvc -> handleWrongCvc()
-//                    NfcState.LimitCvcInput -> handleLimitCvcInput()
-//                }
-//            }
+                    is LoginState.Error -> {
+                        switchLoading(false)
+                        Snackbar.make(binding.root, it.msg, Snackbar.LENGTH_SHORT).show()
+                    }
+
+                    LoginState.Idle -> {
+                        //初始状态，可以从本地获取数据
+                    }
+
+                    LoginState.Loading -> {
+                        // 可以显示一个Loading
+                        switchLoading(true)
+                    }
+                }
+            }
+
+
         }
     }
 
+
+    private fun switchLoading(visible: Boolean) {
+        binding.loading.visibility =
+            if (visible) android.view.View.VISIBLE else android.view.View.GONE
+    }
 }

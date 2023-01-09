@@ -1,6 +1,6 @@
 package com.example.mvvmjetpack.data.source.remote
 
-import com.example.mvvmjetpack.base.apiservices.user.UserApi
+import com.example.mvvmjetpack.data.apiservices.user.UserApi
 
 class LoginRemoteDataSource(private val userApi: UserApi) : ILoginRemoteDataSource {
 
