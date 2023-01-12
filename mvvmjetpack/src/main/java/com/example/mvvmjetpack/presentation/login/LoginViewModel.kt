@@ -11,14 +11,16 @@ import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 
 
-sealed class LoginState {
-    object Idle : LoginState()
-    object Loading : LoginState()
-    class Success(val userInfo: UserInfo) : LoginState()
-    data class Error(val msg: String) : LoginState()
-}
 
 class LoginViewModel(private val loginUserCase: LoginUserCase) : BaseViewModel() {
+    sealed class LoginState {
+        object Idle : LoginState()
+        object Loading : LoginState()
+        class Success(val userInfo: UserInfo) : LoginState()
+        data class Error(val msg: String) : LoginState()
+    }
+
+
     private val _loginState = MutableStateFlow<LoginState>(LoginState.Idle)
     val loginState: StateFlow<LoginState> = _loginState
 

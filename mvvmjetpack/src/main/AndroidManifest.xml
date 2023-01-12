@@ -10,7 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ExampleApp">
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.MainActivity"
+            android:exported="false"
+            android:label="@string/title_activity_main" />
+        <activity
+            android:name=".presentation.home.HomeActivity"
             android:exported="false" />
         <activity
             android:name=".presentation.login.LoginActivity"
